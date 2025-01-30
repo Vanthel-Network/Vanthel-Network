@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Vantium offers premium custom texture packs and mods tailored for your EaglerCraft experience.">
+    <meta name="keywords" content="EaglerCraft, texture packs, mods, premium mods, custom mods, gaming enhancements">
+    <meta name="author" content="Vantium Network">
     <title>Vantium - Premium Modding and Texture Packs</title>
 
     <!-- SEO Tags -->
@@ -17,12 +19,18 @@
     <meta name="twitter:title" content="Vantium - Premium Modding and Texture Packs">
     <meta name="twitter:description" content="Vantium offers premium custom texture packs and mods tailored for your EaglerCraft experience.">
 
-    <!-- Fonts -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- External Stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
 
     <!-- Favicon -->
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+    <!-- Preload Images for Performance -->
+    <link rel="preload" href="assets/images/hero-background.jpg" as="image">
+    <link rel="preload" href="assets/images/favicon.ico" as="image">
 </head>
 
 <body>
@@ -31,7 +39,7 @@
     <header>
         <nav>
             <div class="logo">
-                <h1>Vantium</h1>
+                <h1><a href="#home">Vantium</a></h1>
             </div>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -81,13 +89,18 @@
         <div class="footer-content">
             <p>&copy; 2025 Vantium. All rights reserved.</p>
             <nav class="footer-nav">
-                <ul>
-            </nav>
-        </div>
-    </footer>
 
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
+    <!-- Optimized Scripts -->
+    <script defer src="js/main.js"></script>
+
+    <!-- Google Analytics (example) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXX-X"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-XXXXXX-X');
+    </script>
 </body>
 
 </html>
