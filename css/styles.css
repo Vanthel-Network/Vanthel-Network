@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: all 0.2s ease-in-out; /* Smooth transition for all elements */
 }
 
 body {
@@ -10,21 +11,33 @@ body {
     background-color: #121212; /* Dark background for contrast */
     color: white;
     line-height: 1.6;
+    overflow-x: hidden;
+    scroll-behavior: smooth; /* Smooth scrolling */
+    position: relative;
+    min-height: 100vh;
 }
 
 h1, h2, h3 {
-    font-weight: 600;
-    color: #FF4C4C; /* Deep, vibrant red for modern and premium feel */
+    font-weight: 700;
+    color: #FF4C4C;
+    text-transform: uppercase;
 }
 
 a {
-    text-decoration: none; /* Removed underlines */
-    color: inherit; /* Inherit color from parent */
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #FF4C4C;
+    transform: scale(1.1);
+    text-shadow: 0px 0px 8px rgba(255, 76, 76, 0.8);
 }
 
 /* Header Section */
 header {
-    background: #1b1b1b; /* Darker background for a sleek look */
+    background: linear-gradient(145deg, #1b1b1b, #333);
     padding: 20px 40px;
     display: flex;
     justify-content: space-between;
@@ -33,28 +46,43 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    transition: all 0.3s ease;
 }
 
 header nav ul {
     list-style: none;
     display: flex;
+    margin-left: auto;
 }
 
 header nav ul li {
     margin-left: 30px;
+    font-size: 1.1rem;
+    position: relative;
 }
 
 header nav ul li a {
-    color: #d1d1d1; /* Light grey for nav links */
+    color: #d1d1d1;
     font-size: 1.1rem;
     padding: 8px 15px;
-    transition: color 0.3s ease, transform 0.2s ease;
+    border-radius: 5px;
+    transition: all 0.3s ease, transform 0.2s ease;
 }
 
 header nav ul li a:hover {
-    color: #FF4C4C; /* Deep red hover effect */
+    color: #FF4C4C;
     transform: scale(1.05);
+    background-color: rgba(255, 76, 76, 0.1);
+    box-shadow: 0px 0px 15px rgba(255, 76, 76, 0.4);
+}
+
+/* Sticky Header Effect */
+header.sticky {
+    position: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
 }
 
 /* Hero Section */
@@ -68,6 +96,7 @@ header nav ul li a:hover {
     color: white;
     position: relative;
     overflow: hidden;
+    transition: all 1s ease;
 }
 
 .hero:before {
@@ -77,42 +106,51 @@ header nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Darker overlay for readability */
+    background: rgba(0, 0, 0, 0.6);
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
+    animation: fadeIn 1.5s ease-out;
     text-align: center;
 }
 
 .hero-content h1 {
-    font-size: 5rem;
+    font-size: 6rem;
     margin-bottom: 20px;
-    text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.8); /* Stronger shadow for contrast */
+    text-shadow: 4px 4px 30px rgba(0, 0, 0, 0.8);
+    letter-spacing: 5px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .hero-content p {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-bottom: 30px;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.7);
+    font-weight: 400;
 }
 
 .cta-btn {
-    background-color: #FF4C4C; /* Premium red */
+    background-color: #FF4C4C;
     color: white;
     padding: 16px 40px;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     border-radius: 10px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0px 8px 20px rgba(255, 76, 76, 0.3); /* Deep red shadow */
+    transition: all 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 8px 25px rgba(255, 76, 76, 0.4);
     border: none;
+    cursor: pointer;
+    letter-spacing: 2px;
 }
 
 .cta-btn:hover {
-    background-color: #D12F2F; /* Slightly darker red on hover */
-    transform: translateY(-5px); /* Hover effect for depth */
+    background-color: #D12F2F;
+    transform: translateY(-7px);
+    box-shadow: 0px 12px 30px rgba(255, 76, 76, 0.6);
+    letter-spacing: 3px;
+    color: #fff;
 }
 
 /* Services Section */
@@ -120,28 +158,53 @@ header nav ul li a:hover {
     padding: 100px 20px;
     text-align: center;
     background-color: #181818;
+    animation: fadeInUp 1s ease-out;
+    position: relative;
+    z-index: 1;
 }
 
 .services h2 {
-    font-size: 3.8rem;
+    font-size: 4rem;
     margin-bottom: 40px;
     color: #FF4C4C;
+    text-transform: uppercase;
 }
 
 .service-card {
-    background-color: #2b2b2b; /* Dark background for cards */
+    background-color: #2b2b2b;
     padding: 50px;
     margin: 25px;
     display: inline-block;
     width: 30%;
     border-radius: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.service-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 76, 76, 0.1);
+    border-radius: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(255, 76, 76, 0.5); /* Premium red shadow */
+    transform: translateY(-15px);
+    box-shadow: 0 15px 30px rgba(255, 76, 76, 0.5);
+    background: #333;
+}
+
+.service-card:hover::after {
+    opacity: 1;
 }
 
 .service-card h3 {
@@ -155,38 +218,12 @@ header nav ul li a:hover {
     color: #bbb;
 }
 
-/* Portfolio Section */
-.portfolio {
-    background-color: #222;
-    padding: 90px 20px;
-    text-align: center;
-}
-
-.portfolio-gallery {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.portfolio-gallery img {
-    width: 280px;
-    height: 280px;
-    border-radius: 15px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-    border: 5px solid #333; /* Subtle border around images */
-}
-
-.portfolio-gallery img:hover {
-    transform: scale(1.1);
-    border-color: #FF4C4C; /* Red border on hover */
-}
-
 /* Order Section */
 .order {
     background-color: #121212;
     text-align: center;
     padding: 90px 20px;
+    animation: fadeInUp 1.5s ease-out;
 }
 
 .order h2 {
@@ -208,6 +245,9 @@ footer {
     text-align: center;
     color: #bbb;
     font-size: 1.1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
 }
 
 footer p {
@@ -215,54 +255,37 @@ footer p {
 }
 
 footer a {
-    color: #FF4C4C; /* Red footer link */
+    color: #FF4C4C;
 }
 
 footer a:hover {
-    color: #D12F2F; /* Darker red for footer links */
+    color: #D12F2F;
     transform: scale(1.05);
 }
-/* Sticky Header */
-header.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 100;
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Hero Section */
-.hero-content {
-    opacity: 0;
-    transition: opacity 1s ease;
-}
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
 
-.hero-content .fade-in {
-    opacity: 1;
-    transition: opacity 1s ease;
-}
-
-/* Service Cards Animation */
-.service-card {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s ease, transform 0.5s ease;
-}
-
-.service-card.animate {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Footer Fade-In */
-footer {
-    opacity: 0;
-    transition: opacity 1s ease;
-}
-
-footer.fade-in-footer {
-    opacity: 1;
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Mobile Menu Toggle */
@@ -288,6 +311,8 @@ nav ul.open {
     .menu-toggle {
         display: block;
         cursor: pointer;
+        color: white;
+        font-size: 2rem;
     }
 
     nav ul {
@@ -298,3 +323,117 @@ nav ul.open {
         display: block;
     }
 }
+/* Attention-grabbing animation extension */
+@keyframes extremeGlow {
+    0% {
+        transform: scale(1);
+        text-shadow: 0 0 10px #FF4C4C, 0 0 20px #FF4C4C, 0 0 30px #FF4C4C;
+        box-shadow: 0 0 15px #FF4C4C, 0 0 25px #FF4C4C;
+    }
+    25% {
+        transform: scale(1.05);
+        text-shadow: 0 0 25px #FF4C4C, 0 0 35px #FF4C4C, 0 0 50px #FF4C4C;
+        box-shadow: 0 0 35px #FF4C4C, 0 0 50px #FF4C4C;
+    }
+    50% {
+        transform: scale(1.1);
+        text-shadow: 0 0 40px #FF4C4C, 0 0 60px #FF4C4C, 0 0 100px #FF4C4C;
+        box-shadow: 0 0 80px #FF4C4C, 0 0 120px #FF4C4C;
+    }
+    75% {
+        transform: scale(1.05);
+        text-shadow: 0 0 30px #FF4C4C, 0 0 50px #FF4C4C, 0 0 75px #FF4C4C;
+        box-shadow: 0 0 50px #FF4C4C, 0 0 75px #FF4C4C;
+    }
+    100% {
+        transform: scale(1);
+        text-shadow: 0 0 20px #FF4C4C, 0 0 30px #FF4C4C, 0 0 50px #FF4C4C;
+        box-shadow: 0 0 35px #FF4C4C, 0 0 50px #FF4C4C;
+    }
+}
+
+/* Applying the animation to elements */
+.attention-grabber {
+    animation: extremeGlow 1.5s infinite alternate, shake 0.5s ease-in-out infinite;
+    font-size: 2rem;
+    color: #FF4C4C;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Additional shake effect */
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    75% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Apply glow to any button or CTA */
+.cta-btn.attention-grabber {
+    animation: extremeGlow 2s ease-in-out infinite alternate;
+    border: 2px solid #FF4C4C;
+    background-color: transparent;
+    padding: 20px 40px;
+    font-size: 1.6rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cta-btn.attention-grabber:hover {
+    background-color: #FF4C4C;
+    color: #121212;
+    transform: scale(1.05);
+    box-shadow: 0 0 50px rgba(255, 76, 76, 0.8);
+}
+
+/* Intense Bounce Animation */
+@keyframes intenseBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Applying Bounce to a title or important text */
+.bounce-text {
+    animation: intenseBounce 1s ease-in-out infinite;
+    font-size: 3rem;
+    color: #FF4C4C;
+    text-shadow: 0 0 15px rgba(255, 76, 76, 0.8);
+    font-weight: bold;
+}
+
+/* Adding glow to important images or sections */
+.attention-image {
+    animation: extremeGlow 2s ease-in-out infinite alternate;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.attention-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 50px rgba(255, 76, 76, 0.8);
+}
+
+/* Attention-Grabber effect for the header */
+header.attention-grabber {
+    animation: extremeGlow 2s ease-in-out infinite alternate;
+    border-bottom: 2px solid #FF4C4C;
+    padding: 20px;
+}
+
