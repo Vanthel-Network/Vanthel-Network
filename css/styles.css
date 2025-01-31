@@ -3,24 +3,29 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: all 0.2s ease-in-out; /* Smooth transition for all elements */
+    transition: all 0.3s ease-out;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #121212; /* Dark background for contrast */
-    color: white;
-    line-height: 1.6;
+    background-color: #121212;
+    color: #fff;
+    line-height: 1.8;
     overflow-x: hidden;
-    scroll-behavior: smooth; /* Smooth scrolling */
+    scroll-behavior: smooth;
     position: relative;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(5px);
 }
 
 h1, h2, h3 {
     font-weight: 700;
-    color: #FF4C4C;
+    color: #FF5C5C;
     text-transform: uppercase;
+    text-shadow: 0 5px 30px rgba(255, 92, 92, 0.9);
+    letter-spacing: 5px;
 }
 
 a {
@@ -30,15 +35,15 @@ a {
 }
 
 a:hover {
-    color: #FF4C4C;
-    transform: scale(1.1);
-    text-shadow: 0px 0px 8px rgba(255, 76, 76, 0.8);
+    color: #FF5C5C;
+    transform: scale(1.05);
+    text-shadow: 0px 0px 25px rgba(255, 92, 92, 0.9);
 }
 
 /* Header Section */
 header {
-    background: linear-gradient(145deg, #1b1b1b, #333);
-    padding: 20px 40px;
+    background: linear-gradient(145deg, #333, #444);
+    padding: 35px 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -46,8 +51,8 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
-    transition: all 0.3s ease;
+    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(12px);
 }
 
 header nav ul {
@@ -57,32 +62,31 @@ header nav ul {
 }
 
 header nav ul li {
-    margin-left: 30px;
-    font-size: 1.1rem;
+    margin-left: 50px;
+    font-size: 1.5rem;
     position: relative;
+    transition: transform 0.5s ease, color 0.4s ease;
 }
 
 header nav ul li a {
-    color: #d1d1d1;
-    font-size: 1.1rem;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: all 0.3s ease, transform 0.2s ease;
+    color: #dcdcdc;
+    font-size: 1.3rem;
+    padding: 16px 30px;
+    border-radius: 10px;
+    transition: all 0.4s ease;
 }
 
 header nav ul li a:hover {
-    color: #FF4C4C;
-    transform: scale(1.05);
-    background-color: rgba(255, 76, 76, 0.1);
-    box-shadow: 0px 0px 15px rgba(255, 76, 76, 0.4);
+    color: #FF5C5C;
+    transform: scale(1.1);
+    background-color: rgba(255, 92, 92, 0.25);
+    box-shadow: 0px 0px 35px rgba(255, 92, 92, 0.8);
 }
 
 /* Sticky Header Effect */
 header.sticky {
-    position: fixed;
-    top: 0;
-    background: rgba(0, 0, 0, 0.9);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.9);
 }
 
 /* Hero Section */
@@ -106,79 +110,78 @@ header.sticky {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.75);
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    animation: fadeIn 1.5s ease-out;
+    animation: fadeInUp 3s ease-out;
     text-align: center;
+    transform: translateY(25px);
 }
 
 .hero-content h1 {
-    font-size: 6rem;
-    margin-bottom: 20px;
-    text-shadow: 4px 4px 30px rgba(0, 0, 0, 0.8);
-    letter-spacing: 5px;
-    font-family: 'Poppins', sans-serif;
+    font-size: 10rem;
+    margin-bottom: 30px;
+    text-shadow: 10px 10px 80px rgba(0, 0, 0, 0.8);
+    letter-spacing: 10px;
 }
 
 .hero-content p {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.7);
-    font-weight: 400;
+    font-size: 3.5rem;
+    margin-bottom: 50px;
+    text-shadow: 4px 4px 35px rgba(0, 0, 0, 0.7);
 }
 
 .cta-btn {
-    background-color: #FF4C4C;
+    background-color: #FF5C5C;
     color: white;
-    padding: 16px 40px;
-    font-size: 1.6rem;
-    border-radius: 10px;
-    transition: all 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0px 8px 25px rgba(255, 76, 76, 0.4);
+    padding: 30px 70px;
+    font-size: 2.2rem;
+    border-radius: 15px;
+    transition: all 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0px 15px 60px rgba(255, 92, 92, 0.5);
     border: none;
     cursor: pointer;
-    letter-spacing: 2px;
+    letter-spacing: 5px;
 }
 
 .cta-btn:hover {
     background-color: #D12F2F;
-    transform: translateY(-7px);
-    box-shadow: 0px 12px 30px rgba(255, 76, 76, 0.6);
-    letter-spacing: 3px;
-    color: #fff;
+    transform: translateY(-15px);
+    box-shadow: 0px 30px 60px rgba(255, 92, 92, 0.8);
+    letter-spacing: 6px;
 }
 
 /* Services Section */
 .services {
-    padding: 100px 20px;
+    padding: 180px 45px;
     text-align: center;
-    background-color: #181818;
-    animation: fadeInUp 1s ease-out;
+    background-color: #222;
+    animation: fadeInUp 2s ease-out;
     position: relative;
     z-index: 1;
 }
 
 .services h2 {
-    font-size: 4rem;
-    margin-bottom: 40px;
-    color: #FF4C4C;
+    font-size: 6rem;
+    margin-bottom: 70px;
+    color: #FF5C5C;
     text-transform: uppercase;
+    letter-spacing: 4px;
 }
 
 .service-card {
-    background-color: #2b2b2b;
-    padding: 50px;
-    margin: 25px;
+    background-color: #2a2a2a;
+    padding: 100px;
+    margin: 50px;
     display: inline-block;
-    width: 30%;
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    width: 28%;
+    border-radius: 30px;
+    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.7);
+    transition: transform 0.6s ease, box-shadow 0.6s ease, background 0.6s ease;
     position: relative;
     z-index: 2;
 }
@@ -190,16 +193,16 @@ header.sticky {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 76, 76, 0.1);
-    border-radius: 15px;
+    background: rgba(255, 92, 92, 0.3);
+    border-radius: 30px;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease;
     z-index: -1;
 }
 
 .service-card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 15px 30px rgba(255, 76, 76, 0.5);
+    transform: translateY(-40px);
+    box-shadow: 0 40px 70px rgba(255, 92, 92, 0.7);
     background: #333;
 }
 
@@ -208,78 +211,72 @@ header.sticky {
 }
 
 .service-card h3 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #FF4C4C;
+    font-size: 4rem;
+    margin-bottom: 40px;
+    color: #FF5C5C;
+    letter-spacing: 2px;
 }
 
 .service-card p {
-    font-size: 1.2rem;
-    color: #bbb;
+    font-size: 1.7rem;
+    color: #ccc;
+    line-height: 1.8;
 }
 
 /* Order Section */
 .order {
     background-color: #121212;
     text-align: center;
-    padding: 90px 20px;
-    animation: fadeInUp 1.5s ease-out;
+    padding: 140px 35px;
+    animation: fadeInUp 2.5s ease-out;
 }
 
 .order h2 {
-    font-size: 3.8rem;
-    margin-bottom: 25px;
-    color: #FF4C4C;
+    font-size: 5rem;
+    margin-bottom: 50px;
+    color: #FF5C5C;
+    text-transform: uppercase;
+    letter-spacing: 5px;
 }
 
 .order p {
-    font-size: 1.4rem;
-    margin-bottom: 35px;
-    color: #ccc;
+    font-size: 2rem;
+    margin-bottom: 60px;
+    color: #ddd;
 }
 
 /* Footer Section */
 footer {
     background-color: #111;
-    padding: 20px;
+    padding: 45px 30px;
     text-align: center;
     color: #bbb;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
+    font-size: 1.4rem;
+    transition: all 0.4s ease;
     position: relative;
     z-index: 2;
 }
 
 footer p {
-    color: #777;
+    color: #888;
 }
 
 footer a {
-    color: #FF4C4C;
+    color: #FF5C5C;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
 }
 
 footer a:hover {
     color: #D12F2F;
-    transform: scale(1.05);
+    transform: scale(1.07);
 }
 
 /* Animations */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 @keyframes fadeInUp {
     0% {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(70px);
     }
 
     100% {
@@ -297,7 +294,7 @@ nav ul {
 nav ul.open {
     display: block;
     position: absolute;
-    top: 60px;
+    top: 90px;
     left: 0;
     background: rgba(0, 0, 0, 0.9);
     width: 100%;
@@ -312,7 +309,7 @@ nav ul.open {
         display: block;
         cursor: pointer;
         color: white;
-        font-size: 2rem;
+        font-size: 4rem;
     }
 
     nav ul {
@@ -322,118 +319,18 @@ nav ul.open {
     nav ul.open {
         display: block;
     }
-}
-/* Attention-grabbing animation extension */
-@keyframes extremeGlow {
-    0% {
-        transform: scale(1);
-        text-shadow: 0 0 10px #FF4C4C, 0 0 20px #FF4C4C, 0 0 30px #FF4C4C;
-        box-shadow: 0 0 15px #FF4C4C, 0 0 25px #FF4C4C;
-    }
-    25% {
-        transform: scale(1.05);
-        text-shadow: 0 0 25px #FF4C4C, 0 0 35px #FF4C4C, 0 0 50px #FF4C4C;
-        box-shadow: 0 0 35px #FF4C4C, 0 0 50px #FF4C4C;
-    }
-    50% {
-        transform: scale(1.1);
-        text-shadow: 0 0 40px #FF4C4C, 0 0 60px #FF4C4C, 0 0 100px #FF4C4C;
-        box-shadow: 0 0 80px #FF4C4C, 0 0 120px #FF4C4C;
-    }
-    75% {
-        transform: scale(1.05);
-        text-shadow: 0 0 30px #FF4C4C, 0 0 50px #FF4C4C, 0 0 75px #FF4C4C;
-        box-shadow: 0 0 50px #FF4C4C, 0 0 75px #FF4C4C;
-    }
-    100% {
-        transform: scale(1);
-        text-shadow: 0 0 20px #FF4C4C, 0 0 30px #FF4C4C, 0 0 50px #FF4C4C;
-        box-shadow: 0 0 35px #FF4C4C, 0 0 50px #FF4C4C;
-    }
-}
 
-/* Applying the animation to elements */
-.attention-grabber {
-    animation: extremeGlow 1.5s infinite alternate, shake 0.5s ease-in-out infinite;
-    font-size: 2rem;
-    color: #FF4C4C;
-    font-weight: bold;
-    text-transform: uppercase;
-}
+    header {
+        padding: 25px 50px;
+    }
 
-/* Additional shake effect */
-@keyframes shake {
-    0% {
-        transform: translateX(0);
+    header nav ul {
+        flex-direction: column;
+        padding: 20px 0;
     }
-    25% {
-        transform: translateX(-10px);
-    }
-    50% {
-        transform: translateX(10px);
-    }
-    75% {
-        transform: translateX(-10px);
-    }
-    100% {
-        transform: translateX(0);
+
+    .cta-btn {
+        font-size: 2rem;
+        padding: 22px 55px;
     }
 }
-
-/* Apply glow to any button or CTA */
-.cta-btn.attention-grabber {
-    animation: extremeGlow 2s ease-in-out infinite alternate;
-    border: 2px solid #FF4C4C;
-    background-color: transparent;
-    padding: 20px 40px;
-    font-size: 1.6rem;
-    color: white;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.cta-btn.attention-grabber:hover {
-    background-color: #FF4C4C;
-    color: #121212;
-    transform: scale(1.05);
-    box-shadow: 0 0 50px rgba(255, 76, 76, 0.8);
-}
-
-/* Intense Bounce Animation */
-@keyframes intenseBounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-15px);
-    }
-}
-
-/* Applying Bounce to a title or important text */
-.bounce-text {
-    animation: intenseBounce 1s ease-in-out infinite;
-    font-size: 3rem;
-    color: #FF4C4C;
-    text-shadow: 0 0 15px rgba(255, 76, 76, 0.8);
-    font-weight: bold;
-}
-
-/* Adding glow to important images or sections */
-.attention-image {
-    animation: extremeGlow 2s ease-in-out infinite alternate;
-    border-radius: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.attention-image:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 50px rgba(255, 76, 76, 0.8);
-}
-
-/* Attention-Grabber effect for the header */
-header.attention-grabber {
-    animation: extremeGlow 2s ease-in-out infinite alternate;
-    border-bottom: 2px solid #FF4C4C;
-    padding: 20px;
-}
-
