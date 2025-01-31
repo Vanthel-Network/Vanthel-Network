@@ -4,20 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vantium offers premium custom texture packs and mods tailored for your EaglerCraft experience.">
-    <meta name="keywords" content="EaglerCraft, texture packs, mods, premium mods, custom mods, gaming enhancements">
+    <meta name="description" content="Vantium offers premium custom texture packs and mods tailored for your EaglerCraft experience, designed to enhance gameplay and elevate your server with cutting-edge features.">
+    <meta name="keywords" content="EaglerCraft, texture packs, mods, premium mods, custom mods, gaming enhancements, high-performance mods, custom servers">
     <meta name="author" content="Vantium Network">
-    <title>Vantium - Premium Modding and Texture Packs</title>
+    <title>Vantium - Premium Modding and Texture Packs for EaglerCraft</title>
 
     <!-- SEO Tags -->
-    <meta property="og:title" content="Vantium - Premium Modding and Texture Packs">
-    <meta property="og:description" content="Vantium offers premium custom texture packs and mods tailored for your EaglerCraft experience.">
+    <meta property="og:title" content="Vantium - Premium Modding and Texture Packs for EaglerCraft">
+    <meta property="og:description" content="Vantium offers premium custom texture packs and mods tailored for your EaglerCraft experience, designed to enhance gameplay and elevate your server with cutting-edge features.">
     <meta property="og:image" content="assets/images/og-image.jpg">
     <meta property="og:url" content="https://vantium.vercel.app">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@Vantium">
-    <meta name="twitter:title" content="Vantium - Premium Modding and Texture Packs">
-    <meta name="twitter:description" content="Vantium offers premium custom texture packs and mods tailored for your EaglerCraft experience.">
+    <meta name="twitter:title" content="Vantium - Premium Modding and Texture Packs for EaglerCraft">
+    <meta name="twitter:description" content="Vantium offers premium custom texture packs and mods tailored for your EaglerCraft experience, designed to enhance gameplay and elevate your server with cutting-edge features.">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -31,6 +31,26 @@
     <!-- Preload Images for Performance -->
     <link rel="preload" href="assets/images/hero-background.jpg" as="image">
     <link rel="preload" href="assets/images/favicon.ico" as="image">
+
+    <!-- Additional Meta Tags for Performance and SEO -->
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#ff0000">
+    <meta name="google-site-verification" content="your-verification-code">
+
+    <!-- Structured Data for Rich Snippets -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Vantium",
+            "url": "https://vantium.vercel.app",
+            "logo": "https://vantium.vercel.app/assets/images/logo.png",
+            "sameAs": [
+                "https://twitter.com/Vantium",
+                "https://github.com/Vantium-Network"
+            ]
+        }
+    </script>
 </head>
 
 <body>
@@ -49,7 +69,7 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Parallax Effect -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Craft Your Perfect World</h1>
@@ -58,7 +78,7 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Services Section with Hover Animations -->
     <section id="services" class="services">
         <h2>Our Services</h2>
         <div class="service-cards">
@@ -77,20 +97,20 @@
         </div>
     </section>
 
-    <!-- Order Section -->
+    <!-- Order Section with Parallax Scrolling -->
     <section id="order" class="order">
         <h2>Place Your Order</h2>
         <p>Ready to take your EaglerCraft experience to the next level? Click the button below to get started with your custom project.</p>
         <a href="https://github.com/Vantium-Network" class="cta-btn">Order Now</a>
     </section>
 
-    <!-- Footer Section -->
+    <!-- Footer Section with Social Media Links -->
     <footer>
         <div class="footer-content">
             <p>&copy; 2025 Vantium. All rights reserved.</p>
             <nav class="footer-nav">
-
-    <!-- Optimized Scripts -->
+            
+<!-- Optimized Scripts -->
     <script defer src="js/main.js"></script>
 
     <!-- Google Analytics (example) -->
@@ -101,6 +121,28 @@
         gtag('js', new Date());
         gtag('config', 'UA-XXXXXX-X');
     </script>
+
+    <!-- Lazy Loading for Images -->
+    <script>
+        const images = document.querySelectorAll('img');
+        const config = {
+            rootMargin: '0px 0px 50px 0px',
+            threshold: 0.01
+        };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.src = entry.target.dataset.src;
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, config);
+
+        images.forEach(image => {
+            observer.observe(image);
+        });
+    </script>
+
 </body>
 
 </html>
