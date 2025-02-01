@@ -4,145 +4,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vantium offers premium custom texture packs and mods tailored for your EaglerCraft experience, designed to enhance gameplay and elevate your server with cutting-edge features.">
+    <meta name="description" content="Vanthel offers premium custom texture packs and mods tailored for your EaglerCraft experience, designed to enhance gameplay and elevate your server with cutting-edge features.">
     <meta name="keywords" content="EaglerCraft, texture packs, mods, premium mods, custom mods, gaming enhancements, high-performance mods, custom servers">
-    <meta name="author" content="Vantium Network">
-    <title>Vantium - Premium Modding and Texture Packs for EaglerCraft</title>
+    <meta name="author" content="Vanthel Network">
+    <title>Vanthel - Premium Modding and Texture Packs for EaglerCraft</title>
 
-    <!-- SEO Tags -->
-    <meta property="og:title" content="Vantium - Premium Modding and Texture Packs for EaglerCraft">
-    <meta property="og:description" content="Vantium offers premium custom texture packs and mods tailored for your EaglerCraft experience, designed to enhance gameplay and elevate your server with cutting-edge features.">
-    <meta property="og:image" content="assets/images/og-image.jpg">
-    <meta property="og:url" content="https://vantium.vercel.app">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@Vantium">
-    <meta name="twitter:title" content="Vantium - Premium Modding and Texture Packs for EaglerCraft">
-    <meta name="twitter:description" content="Vantium offers premium custom texture packs and mods tailored for your EaglerCraft experience, designed to enhance gameplay and elevate your server with cutting-edge features.">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-    <!-- External Stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-
-    <!-- Favicon -->
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-
-    <!-- Preload Images for Performance -->
-    <link rel="preload" href="assets/images/hero-background.jpg" as="image">
-    <link rel="preload" href="assets/images/favicon.ico" as="image">
-
-    <!-- Additional Meta Tags for Performance and SEO -->
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#ff0000">
-    <meta name="google-site-verification" content="your-verification-code">
-
-    <!-- Structured Data for Rich Snippets -->
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Vantium",
-            "url": "https://vantium.vercel.app",
-            "logo": "https://vantium.vercel.app/assets/images/logo.png",
-            "sameAs": [
-                "https://twitter.com/Vantium",
-                "https://github.com/Vantium-Network"
-            ]
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    
+    <style>
+        /* Inline background for the entire page */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+            overflow-x: hidden;
         }
-    </script>
+
+        /* Hero Section Background */
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: url('assets/images/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-position 0.1s ease-out;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2; /* Make sure content is above the background */
+        }
+
+        .hero-content h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        /* Optional dark overlay for hero */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay to make text stand out */
+            z-index: 1;
+        }
+    </style>
 </head>
 
 <body>
-
-    <!-- Header Section -->
     <header>
         <nav>
             <div class="logo">
-                <h1><a href="#home">Vantium</a></h1>
+                <h1><a href="#home">Vanthel</a></h1>
             </div>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#order">Order</a></li>
+                <li><a href="order.html">Order</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section with Parallax Effect -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Craft Your Perfect World</h1>
             <p>Premium Texture Packs & Mods tailored for your EaglerCraft experience</p>
-            <a href="https://github.com/Vantium-Network" class="cta-btn">Order Your Mod</a>
+            <a href="https://github.com/Vanthel-Network" class="cta-btn">Order Your Mod</a>
         </div>
     </section>
 
-    <!-- Services Section with Hover Animations -->
     <section id="services" class="services">
         <h2>Our Services</h2>
         <div class="service-cards">
             <article class="service-card">
                 <h3>Custom Texture Packs</h3>
-                <p>Create stunning, high-quality custom texture packs that stand out and enhance your gameplay experience.</p>
+                <p>High-quality custom texture packs that enhance gameplay visuals.</p>
             </article>
             <article class="service-card">
-                <h3>Advanced Modding Services</h3>
-                <p>Full modding solutions with custom features, optimizations, and performance improvements for your server.</p>
+                <h3>Advanced Modding</h3>
+                <p>Fully customized mods with performance improvements and unique features.</p>
+            </article>
+            <article class="service-card">
+                <h3>Exclusive Server Plugins</h3>
+                <p>Specialized plugins for your server, boosting gameplay features and mechanics.</p>
+            </article>
+            <article class="service-card">
+                <h3>Custom UI Overhauls</h3>
+                <p>Redesign your in-game interface with smooth, modern UI enhancements.</p>
+            </article>
+            <article class="service-card">
+                <h3>FPS Optimization</h3>
+                <p>Enhance performance and reduce lag with our top-tier optimization mods.</p>
             </article>
             <article class="service-card">
                 <h3>Premium Mods</h3>
-                <p>Detailed and unique mods designed for experienced players and high-end servers looking for cutting-edge gameplay features.</p>
+                <p>Exclusive, high-end mods designed for pro players and top-tier servers.</p>
             </article>
         </div>
     </section>
 
-    <!-- Order Section with Parallax Scrolling -->
     <section id="order" class="order">
         <h2>Place Your Order</h2>
-        <p>Ready to take your EaglerCraft experience to the next level? Click the button below to get started with your custom project.</p>
-        <a href="https://github.com/Vantium-Network" class="cta-btn">Order Now</a>
+        <p>Ready to upgrade your EaglerCraft experience? Click below to start.</p>
+        <a href="https://github.com/Vanthel-Network" class="cta-btn">Order Now</a>
     </section>
 
-    <!-- Footer Section with Social Media Links -->
     <footer>
         <div class="footer-content">
-            <p>&copy; 2025 Vantium. All rights reserved.</p>
-            <nav class="footer-nav">
-            
-<!-- Optimized Scripts -->
-    <script defer src="js/main.js"></script>
+            <p>&copy; 2025 Vanthel. All rights reserved.</p>
+        </div>
+    </footer>
 
-    <!-- Google Analytics (example) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXX-X"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-XXXXXX-X');
-    </script>
+        gsap.from(".hero-content h1", { duration: 1, opacity: 0, y: -50, ease: "power2.out" });
+        gsap.from(".hero-content p", { duration: 1, delay: 0.3, opacity: 0, y: -30, ease: "power2.out" });
+        gsap.from(".cta-btn", { duration: 1, delay: 0.6, opacity: 0, scale: 0.9, ease: "elastic.out(1, 0.3)" });
 
-    <!-- Lazy Loading for Images -->
-    <script>
-        const images = document.querySelectorAll('img');
-        const config = {
-            rootMargin: '0px 0px 50px 0px',
-            threshold: 0.01
-        };
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.src = entry.target.dataset.src;
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, config);
+        // Mouse parallax effect
+        const hero = document.querySelector('.hero');
+        const parallaxSpeed = 0.1; // Adjust this value for stronger/weaker effect
 
-        images.forEach(image => {
-            observer.observe(image);
+        window.addEventListener('mousemove', (e) => {
+            let offsetX = (window.innerWidth - e.pageX * 2) * parallaxSpeed;
+            let offsetY = (window.innerHeight - e.pageY * 2) * parallaxSpeed;
+            hero.style.backgroundPosition = `${offsetX}px ${offsetY}px`;
         });
     </script>
-
 </body>
 
 </html>
